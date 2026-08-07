@@ -61,7 +61,10 @@ export default async function (pi: ExtensionAPI) {
   let liveModels: ProviderModelConfig[] = loadCachedModels();
   const seedModels = getSeedModels(liveModels, LLMGATEWAY_STATIC_MODELS);
 
-  let modelsLoaded = false;
+  // Tracks the in-flight live model fetch so a new session_start can abort a
+  // previous one. We fetch on *every* session_start (not just the first) so
+  // that models added to or removed from the LLM Gateway / DevPass catalog are
+  // reflected in Pi's model list on the next session.
   let fetchAbort: AbortController | undefined;
 
   registerProvider(pi, seedModels);
@@ -96,24 +99,32 @@ export default async function (pi: ExtensionAPI) {
 
     emitConfigUpdated(pi);
 
-    if (!modelsLoaded) {
-      modelsLoaded = true;
-      fetchAbort?.abort();
-      fetchAbort = new AbortController();
+    // Refresh the model list from the live gateway catalog on every
+    // session_start. This is what makes the model list dynamic: any model the
+    // gateway adds or removes is picked up on the next session. The seed (cache
+    // or static snapshot) keeps models available immediately, before this
+    // background fetch completes (stale-while-revalidate).
+    fetchAbort?.abort();
+    const controller = new AbortController();
+    fetchAbort = controller;
 
+    try {
       const apiKey = await getLLMGatewayApiKey(ctx.modelRegistry.authStorage);
       const result = await fetchModels({
         baseUrl,
         apiKey,
-        signal: fetchAbort.signal,
+        signal: controller.signal,
       });
 
-      if (result.success && !fetchAbort.signal.aborted) {
+      if (result.success && !controller.signal.aborted) {
         const fetched = buildModelsFromApi(result.data, includeDeactivated);
         liveModels = fetched;
         await writeCachedModels(fetched);
         registerProvider(pi, fetched);
       }
+    } catch {
+      // Non-fatal: a failed refresh just keeps the current seed/live list.
+      // The next session_start will retry.
     }
   });
 }
