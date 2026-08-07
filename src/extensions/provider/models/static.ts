@@ -6,15 +6,15 @@ import type { ProviderModelConfig } from "@earendil-works/pi-coding-agent";
  * fetch on session_start completes. Run `bun run test` to validate this
  * snapshot against the live API and detect drift.
  *
- * Snapshot generated: 2026-06-23
- * Model count: 182
+ * Snapshot generated: 2026-08-07
+ * Model count: 193
  */
 export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
   {
     id: "auto",
     name: "Auto Route",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0,
       output: 0,
@@ -25,14 +25,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "gpt-4o-mini",
     name: "GPT-4o Mini",
     reasoning: false,
-    input: ["text"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.15,
       output: 0.6,
@@ -43,14 +43,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "gpt-4o-search-preview",
     name: "GPT-4o Search Preview",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 2.5,
       output: 10,
@@ -61,14 +61,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "gpt-4o-mini-search-preview",
     name: "GPT-4o Mini Search Preview",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.15,
       output: 0.6,
@@ -79,14 +79,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "gpt-4",
     name: "GPT-4",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 30,
       output: 60,
@@ -97,14 +97,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "gpt-4o",
     name: "GPT-4o",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 2.5,
       output: 10,
@@ -115,14 +115,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "gpt-3.5-turbo",
     name: "GPT-3.5 Turbo",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.5,
       output: 1.5,
@@ -133,14 +133,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "gpt-4-turbo",
     name: "GPT-4 Turbo",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 10,
       output: 30,
@@ -151,14 +151,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "gpt-4.1",
     name: "GPT-4.1",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 2,
       output: 8,
@@ -169,14 +169,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "o1",
     name: "o1",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 15,
       output: 60,
@@ -187,7 +187,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -201,7 +201,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gpt-4.1-mini",
     name: "GPT-4.1 Mini",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.39999999999999997,
       output: 1.5999999999999999,
@@ -212,14 +212,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "gpt-4.1-nano",
     name: "GPT-4.1 Nano",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.09999999999999999,
       output: 0.39999999999999997,
@@ -230,14 +230,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "o3-mini",
     name: "o3 Mini",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 1.1,
       output: 4.4,
@@ -248,7 +248,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -262,7 +262,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "o4-mini",
     name: "o4 Mini",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 1.1,
       output: 4.4,
@@ -273,7 +273,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -287,18 +287,18 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gpt-oss-120b",
     name: "GPT OSS 120B",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 0.15,
-      output: 0.75,
-      cacheRead: 0,
+      input: 0.032,
+      output: 0.14,
+      cacheRead: 0.032,
       cacheWrite: 0,
     },
     contextWindow: 131072,
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -312,10 +312,10 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gpt-oss-20b",
     name: "GPT OSS 20B",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 0.09999999999999999,
-      output: 0.5,
+      input: 0.04,
+      output: 0.15,
       cacheRead: 0,
       cacheWrite: 0,
     },
@@ -323,7 +323,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -331,31 +331,13 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
       medium: "medium",
       high: "high",
       xhigh: "xhigh",
-    },
-  },
-  {
-    id: "gpt-5-chat-latest",
-    name: "GPT-5 Chat Latest",
-    reasoning: false,
-    input: ["text", "image"],
-    cost: {
-      input: 1.25,
-      output: 10,
-      cacheRead: 0.125,
-      cacheWrite: 0,
-    },
-    contextWindow: 400000,
-    maxTokens: 16384,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
     },
   },
   {
     id: "gpt-5.1",
     name: "GPT-5.1",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 1.25,
       output: 10,
@@ -366,57 +348,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-    thinkingLevelMap: {
-      minimal: null,
-      low: null,
-      medium: "medium",
-      high: "high",
-      xhigh: "xhigh",
-    },
-  },
-  {
-    id: "gpt-5.1-codex",
-    name: "GPT-5.1 Codex",
-    reasoning: true,
-    input: ["text", "image"],
-    cost: {
-      input: 1.25,
-      output: 10,
-      cacheRead: 0,
-      cacheWrite: 0,
-    },
-    contextWindow: 400000,
-    maxTokens: 16384,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-    thinkingLevelMap: {
-      minimal: null,
-      low: null,
-      medium: "medium",
-      high: "high",
-      xhigh: "xhigh",
-    },
-  },
-  {
-    id: "gpt-5.1-codex-mini",
-    name: "GPT-5.1 Codex mini",
-    reasoning: true,
-    input: ["text", "image"],
-    cost: {
-      input: 0.25,
-      output: 2,
-      cacheRead: 0.024999999999999998,
-      cacheWrite: 0,
-    },
-    contextWindow: 400000,
-    maxTokens: 16384,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -430,7 +362,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gpt-5.2",
     name: "GPT-5.2",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 1.75,
       output: 14,
@@ -441,7 +373,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -455,7 +387,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gpt-5.2-pro",
     name: "GPT-5.2 Pro",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 21,
       output: 168,
@@ -466,7 +398,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -480,7 +412,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gpt-5.4",
     name: "GPT-5.4",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 2.5,
       output: 15,
@@ -491,7 +423,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -505,7 +437,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gpt-5.4-pro",
     name: "GPT-5.4 Pro",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 30,
       output: 180,
@@ -516,7 +448,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -530,7 +462,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gpt-5.4-mini",
     name: "GPT-5.4 Mini",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.75,
       output: 4.5,
@@ -541,7 +473,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -555,7 +487,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gpt-5.4-nano",
     name: "GPT-5.4 Nano",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.19999999999999998,
       output: 1.25,
@@ -566,7 +498,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -580,7 +512,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gpt-5.5",
     name: "GPT-5.5",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 5,
       output: 30,
@@ -591,7 +523,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -605,7 +537,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gpt-5.5-pro",
     name: "GPT-5.5 Pro",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 30,
       output: 180,
@@ -616,7 +548,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -627,21 +559,71 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     },
   },
   {
-    id: "gpt-5.2-codex",
-    name: "GPT-5.2 Codex",
+    id: "gpt-5.6-sol",
+    name: "GPT-5.6 Sol",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
-      input: 1.75,
-      output: 14,
-      cacheRead: 0.175,
-      cacheWrite: 0,
+      input: 5,
+      output: 30,
+      cacheRead: 0.5,
+      cacheWrite: 6.25,
     },
-    contextWindow: 400000,
+    contextWindow: 1050000,
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "gpt-5.6-terra",
+    name: "GPT-5.6 Terra",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 2,
+      output: 12,
+      cacheRead: 0.19999999999999998,
+      cacheWrite: 2.5,
+    },
+    contextWindow: 1050000,
+    maxTokens: 16384,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "gpt-5.6-luna",
+    name: "GPT-5.6 Luna",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 0.19999999999999998,
+      output: 1.2,
+      cacheRead: 0.02,
+      cacheWrite: 0.25,
+    },
+    contextWindow: 1050000,
+    maxTokens: 16384,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -655,7 +637,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gpt-5.3-codex",
     name: "GPT-5.3 Codex",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 1.75,
       output: 14,
@@ -666,7 +648,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -677,21 +659,21 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     },
   },
   {
-    id: "claude-3-7-sonnet",
-    name: "Claude 3.7 Sonnet",
+    id: "gpt-realtime-2.1",
+    name: "GPT Realtime 2.1",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 3,
-      output: 15,
-      cacheRead: 0.3,
-      cacheWrite: 3.75,
+      input: 4,
+      output: 24,
+      cacheRead: 0.39999999999999997,
+      cacheWrite: 0,
     },
-    contextWindow: 200000,
-    maxTokens: 32000,
+    contextWindow: 128000,
+    maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -702,21 +684,75 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     },
   },
   {
-    id: "claude-3-7-sonnet-20250219",
-    name: "Claude 3.7 Sonnet (2025-02-19)",
-    reasoning: true,
-    input: ["text"],
+    id: "gpt-realtime-2.1-mini",
+    name: "GPT Realtime 2.1 Mini",
+    reasoning: false,
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 3,
-      output: 15,
-      cacheRead: 0.3,
-      cacheWrite: 3.75,
+      input: 0.6,
+      output: 2.4,
+      cacheRead: 0.06,
+      cacheWrite: 0,
     },
-    contextWindow: 200000,
+    contextWindow: 128000,
+    maxTokens: 16384,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+  },
+  {
+    id: "gpt-4o-mini-transcribe",
+    name: "GPT-4o Mini Transcribe",
+    reasoning: false,
+    input: ["text"] as ("text" | "image")[],
+    cost: {
+      input: 1.25,
+      output: 5,
+      cacheRead: 0,
+      cacheWrite: 0,
+    },
+    contextWindow: 16000,
+    maxTokens: 16384,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+  },
+  {
+    id: "gpt-4o-transcribe",
+    name: "GPT-4o Transcribe",
+    reasoning: false,
+    input: ["text"] as ("text" | "image")[],
+    cost: {
+      input: 2.5,
+      output: 10,
+      cacheRead: 0,
+      cacheWrite: 0,
+    },
+    contextWindow: 16000,
+    maxTokens: 16384,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+  },
+  {
+    id: "claude-fable-5",
+    name: "Claude Fable 5",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 10,
+      output: 50,
+      cacheRead: 1,
+      cacheWrite: 12.5,
+    },
+    contextWindow: 1000000,
     maxTokens: 32000,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -730,7 +766,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "claude-sonnet-4-5",
     name: "Claude Sonnet 4.5",
     reasoning: true,
-    input: ["text"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 3,
       output: 15,
@@ -741,7 +777,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32000,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -755,7 +791,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "claude-sonnet-4-5-20250929",
     name: "Claude Sonnet 4.5 (2025-09-29)",
     reasoning: true,
-    input: ["text"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 3,
       output: 15,
@@ -766,7 +802,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32000,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -780,7 +816,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "claude-sonnet-4-6",
     name: "Claude Sonnet 4.6",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 3,
       output: 15,
@@ -791,7 +827,32 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32000,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "claude-sonnet-5",
+    name: "Claude Sonnet 5",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 2,
+      output: 10,
+      cacheRead: 0.19999999999999998,
+      cacheWrite: 2.5,
+    },
+    contextWindow: 1000000,
+    maxTokens: 32000,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -804,8 +865,8 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
   {
     id: "claude-haiku-4-5",
     name: "Claude Haiku 4.5",
-    reasoning: false,
-    input: ["text"],
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 1,
       output: 5,
@@ -816,14 +877,46 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32000,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "claude-haiku-4-5-free",
+    name: "Claude Haiku 4.5 (Free)",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 0,
+      output: 0,
+      cacheRead: 0,
+      cacheWrite: 0,
+    },
+    contextWindow: 200000,
+    maxTokens: 32000,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
     },
   },
   {
     id: "claude-haiku-4-5-20251001",
     name: "Claude Haiku 4.5 (2025-10-01)",
-    reasoning: false,
-    input: ["text"],
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 1,
       output: 5,
@@ -834,14 +927,21 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32000,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
     },
   },
   {
     id: "claude-opus-4-1-20250805",
     name: "Claude Opus 4.1",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 15,
       output: 75,
@@ -852,7 +952,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32000,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -866,7 +966,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "claude-3-opus",
     name: "Claude 3 Opus",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 15,
       output: 75,
@@ -877,14 +977,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32000,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "claude-opus-4-5-20251101",
     name: "Claude Opus 4.5",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 5,
       output: 25,
@@ -895,7 +995,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32000,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -909,7 +1009,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "claude-opus-4-6",
     name: "Claude Opus 4.6",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 5,
       output: 25,
@@ -920,7 +1020,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32000,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -934,7 +1034,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "claude-opus-4-7",
     name: "Claude Opus 4.7",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 5,
       output: 25,
@@ -945,7 +1045,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32000,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -959,7 +1059,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "claude-opus-4-8",
     name: "Claude Opus 4.8",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 5,
       output: 25,
@@ -970,7 +1070,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32000,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -981,21 +1081,21 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     },
   },
   {
-    id: "gemini-2.5-pro",
-    name: "Gemini 2.5 Pro",
+    id: "claude-opus-5",
+    name: "Claude Opus 5",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
-      input: 1.25,
-      output: 10,
-      cacheRead: 0.125,
-      cacheWrite: 0,
+      input: 5,
+      output: 25,
+      cacheRead: 0.5,
+      cacheWrite: 6.25,
     },
-    contextWindow: 1048576,
-    maxTokens: 32768,
+    contextWindow: 1000000,
+    maxTokens: 32000,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1003,56 +1103,13 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
       medium: "medium",
       high: "high",
       xhigh: "xhigh",
-    },
-  },
-  {
-    id: "gemini-2.5-flash",
-    name: "Gemini 2.5 Flash",
-    reasoning: true,
-    input: ["text", "image"],
-    cost: {
-      input: 0.3,
-      output: 2.5,
-      cacheRead: 0.03,
-      cacheWrite: 0,
-    },
-    contextWindow: 1048576,
-    maxTokens: 32768,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-    thinkingLevelMap: {
-      minimal: null,
-      low: null,
-      medium: "medium",
-      high: "high",
-      xhigh: "xhigh",
-    },
-  },
-  {
-    id: "gemini-2.5-flash-lite",
-    name: "Gemini 2.5 Flash Lite",
-    reasoning: false,
-    input: ["text", "image"],
-    cost: {
-      input: 0.09999999999999999,
-      output: 0.39999999999999997,
-      cacheRead: 0.01,
-      cacheWrite: 0,
-    },
-    contextWindow: 1048576,
-    maxTokens: 32768,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
     },
   },
   {
     id: "gemini-pro-latest",
     name: "Gemini Pro Latest",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 2,
       output: 12,
@@ -1063,7 +1120,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1077,7 +1134,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gemini-3.1-pro-preview",
     name: "Gemini 3.1 Pro (Preview)",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 2,
       output: 12,
@@ -1088,7 +1145,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1102,7 +1159,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gemini-3.1-flash-lite",
     name: "Gemini 3.1 Flash Lite",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.25,
       output: 1.5,
@@ -1113,7 +1170,32 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "gemini-3.1-flash-lite-image",
+    name: "Gemini 3.1 Flash Lite Image",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 0.25,
+      output: 1.5,
+      cacheRead: 0,
+      cacheWrite: 0,
+    },
+    contextWindow: 65536,
+    maxTokens: 32768,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1127,7 +1209,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gemini-3.5-flash",
     name: "Gemini 3.5 Flash",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 1.5,
       output: 9,
@@ -1138,7 +1220,57 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "gemini-3.5-flash-lite",
+    name: "Gemini 3.5 Flash Lite",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 0.3,
+      output: 2.5,
+      cacheRead: 0.03,
+      cacheWrite: 0.08333,
+    },
+    contextWindow: 1048576,
+    maxTokens: 32768,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "gemini-3.6-flash",
+    name: "Gemini 3.6 Flash",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 1.5,
+      output: 7.5,
+      cacheRead: 0.15,
+      cacheWrite: 0.08333,
+    },
+    contextWindow: 1048576,
+    maxTokens: 32768,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1152,7 +1284,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gemini-3.1-flash-image-preview",
     name: "Gemini 3.1 Flash Image (Preview)",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.25,
       output: 1.5,
@@ -1163,14 +1295,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "gemini-3-flash-preview",
     name: "Gemini 3 Flash (Preview)",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.5,
       output: 3,
@@ -1181,7 +1313,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1195,7 +1327,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gemini-2.5-flash-image",
     name: "Gemini 2.5 Flash Image",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.3,
       output: 30,
@@ -1206,14 +1338,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "gemini-3-pro-image-preview",
     name: "Gemini 3 Pro Image (Preview)",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 2,
       output: 12,
@@ -1224,25 +1356,43 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
+    },
+  },
+  {
+    id: "gemma-3-27b",
+    name: "Gemma 3 27B",
+    reasoning: false,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 0.09999999999999999,
+      output: 0.3,
+      cacheRead: 0,
+      cacheWrite: 0,
+    },
+    contextWindow: 110000,
+    maxTokens: 32768,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "gemma-4-31b-it",
     name: "Gemma 4 31B IT",
     reasoning: true,
-    input: ["text"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
-      input: 0.13,
-      output: 0.38,
-      cacheRead: 0,
+      input: 0.102,
+      output: 0.29700000000000004,
+      cacheRead: 0.012,
       cacheWrite: 0,
     },
     contextWindow: 262144,
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1256,7 +1406,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "gemma-4-26b-a4b-it",
     name: "Gemma 4 26B A4B IT",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.07,
       output: 0.33999999999999997,
@@ -1267,7 +1417,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1278,10 +1428,46 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     },
   },
   {
+    id: "gemini-2.5-flash-native-audio-preview-12-2025",
+    name: "Gemini 2.5 Flash Native Audio Preview (12-2025)",
+    reasoning: false,
+    input: ["text"] as ("text" | "image")[],
+    cost: {
+      input: 0.5,
+      output: 2,
+      cacheRead: 0.5,
+      cacheWrite: 0,
+    },
+    contextWindow: 131072,
+    maxTokens: 32768,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+  },
+  {
+    id: "gemini-3.1-flash-live-preview",
+    name: "Gemini 3.1 Flash Live Preview",
+    reasoning: false,
+    input: ["text"] as ("text" | "image")[],
+    cost: {
+      input: 0.75,
+      output: 4.5,
+      cacheRead: 0.75,
+      cacheWrite: 0,
+    },
+    contextWindow: 131072,
+    maxTokens: 32768,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+  },
+  {
     id: "sonar-reasoning-pro",
     name: "Sonar Reasoning Pro",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 2,
       output: 8,
@@ -1292,14 +1478,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "sonar-pro",
     name: "Sonar Pro",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 3,
       output: 15,
@@ -1310,14 +1496,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "sonar",
     name: "Sonar",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 1,
       output: 1,
@@ -1328,14 +1514,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "grok-4",
     name: "Grok 4",
-    reasoning: false,
-    input: ["text", "image"],
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 3,
       output: 15,
@@ -1346,25 +1532,32 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
     },
   },
   {
     id: "grok-4-1-fast-reasoning",
     name: "Grok 4.1 Fast Reasoning",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.19999999999999998,
       output: 0.5,
-      cacheRead: 0.049999999999999996,
+      cacheRead: 0,
       cacheWrite: 0,
     },
     contextWindow: 2000000,
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1378,25 +1571,25 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "grok-4-1-fast-non-reasoning",
     name: "Grok 4.1 Fast Non-Reasoning",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.19999999999999998,
       output: 0.5,
-      cacheRead: 0.049999999999999996,
+      cacheRead: 0,
       cacheWrite: 0,
     },
     contextWindow: 2000000,
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "grok-4-20-beta-0309-reasoning",
     name: "Grok 4.20 Beta Reasoning (0309)",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 2,
       output: 6,
@@ -1407,7 +1600,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1421,7 +1614,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "grok-4-20-beta-0309-non-reasoning",
     name: "Grok 4.20 Beta Non-Reasoning (0309)",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 2,
       output: 6,
@@ -1432,17 +1625,17 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "grok-4-20-reasoning",
     name: "Grok 4.20 Reasoning",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
-      input: 2,
-      output: 6,
+      input: 1.25,
+      output: 2.5,
       cacheRead: 0.19999999999999998,
       cacheWrite: 0,
     },
@@ -1450,7 +1643,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1464,10 +1657,10 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "grok-4-20-non-reasoning",
     name: "Grok 4.20 Non-Reasoning",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
-      input: 2,
-      output: 6,
+      input: 1.25,
+      output: 2.5,
       cacheRead: 0.19999999999999998,
       cacheWrite: 0,
     },
@@ -1475,14 +1668,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "grok-4-3",
     name: "Grok 4.3",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 1.25,
       output: 2.5,
@@ -1493,7 +1686,32 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "grok-4-5",
+    name: "Grok 4.5",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 2,
+      output: 6,
+      cacheRead: 0.5,
+      cacheWrite: 0,
+    },
+    contextWindow: 500000,
+    maxTokens: 32768,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1507,7 +1725,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "grok-build-0-1",
     name: "Grok Build 0.1",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 1,
       output: 2,
@@ -1518,7 +1736,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1532,7 +1750,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "mimo-v2.5-pro",
     name: "MiMo V2.5 Pro",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.435,
       output: 0.87,
@@ -1543,32 +1761,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-    thinkingLevelMap: {
-      minimal: null,
-      low: null,
-      medium: "medium",
-      high: "high",
-      xhigh: "xhigh",
-    },
-  },
-  {
-    id: "mimo-v2-pro",
-    name: "MiMo V2 Pro",
-    reasoning: true,
-    input: ["text"],
-    cost: {
-      input: 1,
-      output: 3,
-      cacheRead: 0.19999999999999998,
-      cacheWrite: 0,
-    },
-    contextWindow: 1000000,
-    maxTokens: 32768,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1582,7 +1775,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "mimo-v2.5",
     name: "MiMo V2.5",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.14,
       output: 0.28,
@@ -1593,7 +1786,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1604,28 +1797,60 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     },
   },
   {
-    id: "mimo-v2-omni",
-    name: "MiMo V2 Omni",
-    reasoning: false,
-    input: ["text", "image"],
+    id: "muse-spark-1.2",
+    name: "Muse Spark 1.2",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
-      input: 0.39999999999999997,
-      output: 2,
-      cacheRead: 0.08,
+      input: 1.25,
+      output: 4.25,
+      cacheRead: 0.15,
       cacheWrite: 0,
     },
-    contextWindow: 256000,
-    maxTokens: 32768,
+    contextWindow: 1048576,
+    maxTokens: 8192,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "muse-spark-1.1",
+    name: "Muse Spark 1.1",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 1.25,
+      output: 4.25,
+      cacheRead: 0.15,
+      cacheWrite: 0,
+    },
+    contextWindow: 1048576,
+    maxTokens: 8192,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
     },
   },
   {
     id: "llama-3.1-70b-instruct",
     name: "Llama 3.1 70B Instruct",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.72,
       output: 0.72,
@@ -1636,14 +1861,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 8192,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "llama-3.2-11b-instruct",
     name: "Llama 3.2 11B Instruct",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.07,
       output: 0.33,
@@ -1654,14 +1879,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 8192,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "llama-3.1-nemotron-ultra-253b",
     name: "Llama 3.1 Nemotron Ultra 253B",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.6,
       output: 1.7999999999999998,
@@ -1672,14 +1897,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 8192,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "llama-3.3-70b-instruct",
     name: "Llama 3.3 70B Instruct",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.13,
       output: 0.39999999999999997,
@@ -1690,17 +1915,17 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 8192,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "llama-4-scout-17b-instruct",
     name: "Llama 4 Scout 17B Instruct",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
-      input: 0.16999999999999998,
-      output: 0.66,
+      input: 0.18,
+      output: 0.59,
       cacheRead: 0,
       cacheWrite: 0,
     },
@@ -1708,17 +1933,17 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 8192,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "llama-4-maverick-17b-instruct",
     name: "Llama 4 Maverick 17B Instruct",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
-      input: 0.24,
-      output: 0.9700000000000001,
+      input: 0.27,
+      output: 0.85,
       cacheRead: 0,
       cacheWrite: 0,
     },
@@ -1726,32 +1951,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 8192,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-  },
-  {
-    id: "llama-3-8b-instruct",
-    name: "Llama 3 8B Instruct",
-    reasoning: false,
-    input: ["text"],
-    cost: {
-      input: 0.04,
-      output: 0.04,
-      cacheRead: 0,
-      cacheWrite: 0,
-    },
-    contextWindow: 8192,
-    maxTokens: 8192,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "llama-3-70b-instruct",
     name: "Llama 3 70B Instruct",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.51,
       output: 0.74,
@@ -1762,14 +1969,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 8192,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "llama-3.2-3b-instruct",
     name: "Llama 3.2 3B Instruct",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.03,
       output: 0.049999999999999996,
@@ -1780,50 +1987,25 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 8192,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-  },
-  {
-    id: "deepseek-v3.1",
-    name: "DeepSeek V3.1",
-    reasoning: true,
-    input: ["text"],
-    cost: {
-      input: 0.56,
-      output: 1.68,
-      cacheRead: 0.112,
-      cacheWrite: 0,
-    },
-    contextWindow: 128000,
-    maxTokens: 32768,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-    thinkingLevelMap: {
-      minimal: null,
-      low: null,
-      medium: "medium",
-      high: "high",
-      xhigh: "xhigh",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "deepseek-v3.2",
     name: "DeepSeek V3.2",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 0.28,
-      output: 0.42,
-      cacheRead: 0.028,
+      input: 0.26,
+      output: 0.38,
+      cacheRead: 0.13,
       cacheWrite: 0,
     },
     contextWindow: 163840,
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1837,7 +2019,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "deepseek-v4-pro",
     name: "DeepSeek V4 Pro",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.435,
       output: 0.87,
@@ -1848,7 +2030,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1862,18 +2044,18 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "deepseek-v4-flash",
     name: "DeepSeek V4 Flash",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 0.14,
-      output: 0.28,
-      cacheRead: 0.0028,
+      input: 0.07600000000000001,
+      output: 0.153,
+      cacheRead: 0.014,
       cacheWrite: 0,
     },
     contextWindow: 1050000,
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -1887,7 +2069,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "mistral-large-latest",
     name: "Mistral Large Latest",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 4,
       output: 12,
@@ -1898,32 +2080,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-  },
-  {
-    id: "pixtral-large-latest",
-    name: "Pixtral Large Latest",
-    reasoning: false,
-    input: ["text", "image"],
-    cost: {
-      input: 4,
-      output: 12,
-      cacheRead: 0,
-      cacheWrite: 0,
-    },
-    contextWindow: 128000,
-    maxTokens: 32768,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "mistral-large-2512",
     name: "Mistral Large 3",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.5,
       output: 1.5,
@@ -1934,14 +2098,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "mistral-small-2506",
     name: "Mistral Small 3.2",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.09999999999999999,
       output: 0.3,
@@ -1952,14 +2116,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "ministral-14b-2512",
     name: "Ministral 14B",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.19999999999999998,
       output: 0.19999999999999998,
@@ -1970,14 +2134,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "ministral-8b-2512",
     name: "Ministral 8B",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.15,
       output: 0.15,
@@ -1988,14 +2152,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "ministral-3b-2512",
     name: "Ministral 3B",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.09999999999999999,
       output: 0.09999999999999999,
@@ -2006,14 +2170,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "codestral-2508",
     name: "Codestral",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.3,
       output: 0.8999999999999999,
@@ -2024,14 +2188,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "devstral-2512",
     name: "Devstral 2",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.39999999999999997,
       output: 2,
@@ -2042,43 +2206,25 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-  },
-  {
-    id: "devstral-small-2507",
-    name: "Devstral Small 1.1",
-    reasoning: false,
-    input: ["text"],
-    cost: {
-      input: 0.09999999999999999,
-      output: 0.3,
-      cacheRead: 0,
-      cacheWrite: 0,
-    },
-    contextWindow: 131072,
-    maxTokens: 32768,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "minimax-m3",
     name: "MiniMax M3",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
-      input: 0.6,
-      output: 2.4,
-      cacheRead: 0.12,
+      input: 0.3,
+      output: 1.2,
+      cacheRead: 0.06,
       cacheWrite: 0,
     },
-    contextWindow: 512000,
+    contextWindow: 1048576,
     maxTokens: 40960,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2092,18 +2238,18 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "minimax-m2.7",
     name: "MiniMax M2.7",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 0.3,
-      output: 1.2,
-      cacheRead: 0.06,
+      input: 0.08,
+      output: 0.32,
+      cacheRead: 0.017,
       cacheWrite: 0,
     },
     contextWindow: 204800,
     maxTokens: 40960,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2117,7 +2263,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "minimax-m2.7-highspeed",
     name: "MiniMax M2.7 Highspeed",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.6,
       output: 2.4,
@@ -2128,7 +2274,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 40960,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2142,7 +2288,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "minimax-m2.5",
     name: "MiniMax M2.5",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.3,
       output: 1.2,
@@ -2153,7 +2299,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 40960,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2167,7 +2313,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "minimax-m2.5-highspeed",
     name: "MiniMax M2.5 Highspeed",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.6,
       output: 2.4,
@@ -2178,7 +2324,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 40960,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2192,7 +2338,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "minimax-m2",
     name: "MiniMax M2",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.19999999999999998,
       output: 1,
@@ -2203,7 +2349,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 40960,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2217,7 +2363,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "minimax-m2.1",
     name: "MiniMax M2.1",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.27,
       output: 1.1,
@@ -2228,7 +2374,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 40960,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2242,7 +2388,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "minimax-m2.1-lightning",
     name: "MiniMax M2.1 Lightning",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.12,
       output: 0.48,
@@ -2253,7 +2399,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 40960,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2267,7 +2413,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "minimax-text-01",
     name: "MiniMax Text 01",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.19999999999999998,
       output: 1.1,
@@ -2278,7 +2424,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 40960,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2292,86 +2438,36 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "kimi-k2",
     name: "Kimi K2",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 1,
-      output: 3,
-      cacheRead: 0.5,
+      input: 0.5700000000000001,
+      output: 2.3,
+      cacheRead: 0,
       cacheWrite: 0,
     },
     contextWindow: 256000,
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-  },
-  {
-    id: "kimi-k2-thinking",
-    name: "Kimi K2 Thinking",
-    reasoning: true,
-    input: ["text"],
-    cost: {
-      input: 0.6,
-      output: 2.5,
-      cacheRead: 0.15,
-      cacheWrite: 0,
-    },
-    contextWindow: 262144,
-    maxTokens: 32768,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-    thinkingLevelMap: {
-      minimal: null,
-      low: null,
-      medium: "medium",
-      high: "high",
-      xhigh: "xhigh",
-    },
-  },
-  {
-    id: "kimi-k2-thinking-turbo",
-    name: "Kimi K2 Thinking Turbo",
-    reasoning: true,
-    input: ["text"],
-    cost: {
-      input: 1.15,
-      output: 8,
-      cacheRead: 0.15,
-      cacheWrite: 0,
-    },
-    contextWindow: 262144,
-    maxTokens: 32768,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-    thinkingLevelMap: {
-      minimal: null,
-      low: null,
-      medium: "medium",
-      high: "high",
-      xhigh: "xhigh",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "kimi-k2.5",
     name: "Kimi K2.5",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
-      input: 0.6,
-      output: 3,
-      cacheRead: 0.09999999999999999,
+      input: 0.40499999999999997,
+      output: 1.9800000000000002,
+      cacheRead: 0.22499999999999998,
       cacheWrite: 0,
     },
     contextWindow: 262144,
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2385,18 +2481,18 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "kimi-k2.6",
     name: "Kimi K2.6",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
-      input: 0.95,
-      output: 4,
-      cacheRead: 0.16,
+      input: 0.22,
+      output: 1.137,
+      cacheRead: 0.048,
       cacheWrite: 0,
     },
     contextWindow: 262144,
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2410,7 +2506,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "kimi-k2.7-code",
     name: "Kimi K2.7 Code",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.95,
       output: 4,
@@ -2421,7 +2517,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2435,7 +2531,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "kimi-k2.7-code-highspeed",
     name: "Kimi K2.7 Code Highspeed",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 1.9,
       output: 8,
@@ -2446,7 +2542,57 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "kimi-k3",
+    name: "Kimi K3",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 3,
+      output: 15,
+      cacheRead: 0.3,
+      cacheWrite: 0,
+    },
+    contextWindow: 1048576,
+    maxTokens: 32768,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "kimi-k3-fast",
+    name: "Kimi K3 Fast",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 4.5,
+      output: 22.5,
+      cacheRead: 0.44999999999999996,
+      cacheWrite: 0,
+    },
+    contextWindow: 1040384,
+    maxTokens: 32768,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2460,7 +2606,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "qwen-max",
     name: "Qwen Max",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 1.5999999999999999,
       output: 6.3999999999999995,
@@ -2471,14 +2617,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen-max-latest",
     name: "Qwen Max Latest",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 1.5999999999999999,
       output: 6.3999999999999995,
@@ -2489,14 +2635,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen-plus",
     name: "Qwen Plus",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.39999999999999997,
       output: 1.2,
@@ -2507,14 +2653,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen-plus-latest",
     name: "Qwen Plus Latest",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.39999999999999997,
       output: 1.2,
@@ -2525,14 +2671,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen-flash",
     name: "Qwen Flash",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.049999999999999996,
       output: 0.39999999999999997,
@@ -2543,14 +2689,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen-omni-turbo",
     name: "Qwen Omni Turbo",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.19999999999999998,
       output: 0.7999999999999999,
@@ -2561,53 +2707,35 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-  },
-  {
-    id: "qwen3-coder-plus",
-    name: "Qwen3 Coder Plus",
-    reasoning: false,
-    input: ["text"],
-    cost: {
-      input: 6,
-      output: 60,
-      cacheRead: 1.2,
-      cacheWrite: 7.5,
-    },
-    contextWindow: 1000000,
-    maxTokens: 16384,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen3-235b-a22b-instruct-2507",
     name: "Qwen3 235B A22B Instruct 2507",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 0.19999999999999998,
-      output: 0.6,
+      input: 0.09,
+      output: 0.58,
       cacheRead: 0,
       cacheWrite: 0,
     },
-    contextWindow: 262000,
+    contextWindow: 262144,
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen3-235b-a22b-thinking-2507",
     name: "Qwen3 235B A22B Thinking 2507",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 0.19999999999999998,
-      output: 0.6,
+      input: 0.3,
+      output: 3,
       cacheRead: 0,
       cacheWrite: 0,
     },
@@ -2615,7 +2743,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2629,7 +2757,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "qwen3-235b-a22b-fp8",
     name: "Qwen3 235B A22B FP8",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.19999999999999998,
       output: 0.7999999999999999,
@@ -2640,14 +2768,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen3.5-9b",
     name: "Qwen3.5 9B",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.09999999999999999,
       output: 0.15,
@@ -2658,7 +2786,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2671,65 +2799,54 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
   {
     id: "qwen3-32b",
     name: "Qwen3 32B",
-    reasoning: false,
-    input: ["text"],
+    reasoning: true,
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.09999999999999999,
       output: 0.3,
       cacheRead: 0,
       cacheWrite: 0,
     },
-    contextWindow: 32768,
+    contextWindow: 40960,
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
     },
   },
   {
     id: "qwen2-5-vl-72b-instruct",
     name: "Qwen2.5 VL 72B Instruct",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
-      input: 0.13,
-      output: 0.39999999999999997,
+      input: 0.25,
+      output: 0.75,
       cacheRead: 0,
       cacheWrite: 0,
     },
-    contextWindow: 32768,
+    contextWindow: 32000,
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-  },
-  {
-    id: "qwen3-vl-8b-instruct",
-    name: "Qwen3 VL 8B Instruct",
-    reasoning: false,
-    input: ["text", "image"],
-    cost: {
-      input: 0.08,
-      output: 0.5,
-      cacheRead: 0,
-      cacheWrite: 0,
-    },
-    contextWindow: 131072,
-    maxTokens: 16384,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen3-coder-480b-a35b-instruct",
     name: "Qwen3 Coder 480B A35B Instruct",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 0.39999999999999997,
-      output: 1.7999999999999998,
+      input: 0.3,
+      output: 1.3,
       cacheRead: 0,
       cacheWrite: 0,
     },
@@ -2737,17 +2854,17 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen3-coder-30b-a3b-instruct",
     name: "Qwen3 Coder 30B A3B Instruct",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 0.09999999999999999,
-      output: 0.3,
+      input: 0.07,
+      output: 0.27,
       cacheRead: 0,
       cacheWrite: 0,
     },
@@ -2755,14 +2872,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen3-30b-a3b-instruct-2507",
     name: "Qwen3 30B A3B Instruct 2507",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.09999999999999999,
       output: 0.3,
@@ -2773,17 +2890,17 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen3-next-80b-a3b-thinking",
     name: "Qwen3 Next 80B A3B Thinking",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 0.5,
-      output: 6,
+      input: 0.15,
+      output: 1.2,
       cacheRead: 0,
       cacheWrite: 0,
     },
@@ -2791,7 +2908,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2805,10 +2922,10 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "qwen3-next-80b-a3b-instruct",
     name: "Qwen3 Next 80B A3B Instruct",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 0.5,
-      output: 2,
+      input: 0.15,
+      output: 1.2,
       cacheRead: 0,
       cacheWrite: 0,
     },
@@ -2816,25 +2933,25 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen3-max",
     name: "Qwen3 Max",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
-      input: 3,
-      output: 15,
-      cacheRead: 0.6,
-      cacheWrite: 3.75,
+      input: 0.845,
+      output: 3.38,
+      cacheRead: 0,
+      cacheWrite: 0,
     },
     contextWindow: 262144,
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2848,18 +2965,18 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "qwen3.7-max",
     name: "Qwen3.7 Max",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 2.5,
-      output: 7.5,
-      cacheRead: 0.5,
-      cacheWrite: 3.125,
+      input: 1.25,
+      output: 3.75,
+      cacheRead: 0.125,
+      cacheWrite: 0,
     },
     contextWindow: 1000000,
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2873,7 +2990,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "qwen3.7-plus",
     name: "Qwen3.7 Plus",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.39999999999999997,
       output: 1.5999999999999999,
@@ -2884,7 +3001,57 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "qwen3.7-flash",
+    name: "Qwen3.7 Flash",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 0.03,
+      output: 0.13,
+      cacheRead: 0.006,
+      cacheWrite: 0.0375,
+    },
+    contextWindow: 1000000,
+    maxTokens: 16384,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "qwen3.8-max",
+    name: "Qwen3.8 Max",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 1.815,
+      output: 5.4461,
+      cacheRead: 0.21,
+      cacheWrite: 2.5,
+    },
+    contextWindow: 1000000,
+    maxTokens: 16384,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2898,7 +3065,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "qwen3-coder-next",
     name: "Qwen3 Coder Next",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.108,
       output: 0.675,
@@ -2909,75 +3076,32 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen3-vl-30b-a3b-instruct",
     name: "Qwen3 VL 30B A3B Instruct",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
-      input: 0.19999999999999998,
-      output: 0.7,
+      input: 0.15,
+      output: 0.6,
       cacheRead: 0,
       cacheWrite: 0,
     },
-    contextWindow: 131072,
+    contextWindow: 262144,
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-  },
-  {
-    id: "qwen3-vl-30b-a3b-thinking",
-    name: "Qwen3 VL 30B A3B Thinking",
-    reasoning: true,
-    input: ["text", "image"],
-    cost: {
-      input: 0.19999999999999998,
-      output: 1,
-      cacheRead: 0,
-      cacheWrite: 0,
-    },
-    contextWindow: 131072,
-    maxTokens: 16384,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-    thinkingLevelMap: {
-      minimal: null,
-      low: null,
-      medium: "medium",
-      high: "high",
-      xhigh: "xhigh",
-    },
-  },
-  {
-    id: "qwen3-4b-fp8",
-    name: "Qwen3 4B FP8",
-    reasoning: false,
-    input: ["text"],
-    cost: {
-      input: 0.03,
-      output: 0.03,
-      cacheRead: 0,
-      cacheWrite: 0,
-    },
-    contextWindow: 128000,
-    maxTokens: 16384,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen35-397b-a17b",
     name: "Qwen3.5 397B A17B",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.6,
       output: 3.5999999999999996,
@@ -2988,7 +3112,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -2999,10 +3123,46 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     },
   },
   {
+    id: "qwen-image-3.0",
+    name: "Qwen Image 3.0",
+    reasoning: false,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 0,
+      output: 0,
+      cacheRead: 0,
+      cacheWrite: 0,
+    },
+    contextWindow: 4500,
+    maxTokens: 16384,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+  },
+  {
+    id: "qwen-image-3.0-pro",
+    name: "Qwen Image 3.0 Pro",
+    reasoning: false,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 0,
+      output: 0,
+      cacheRead: 0,
+      cacheWrite: 0,
+    },
+    contextWindow: 4500,
+    maxTokens: 16384,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+  },
+  {
     id: "qwen-image-plus",
     name: "Qwen Image Plus",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0,
       output: 0,
@@ -3013,14 +3173,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen-image-max",
     name: "Qwen Image Max",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0,
       output: 0,
@@ -3031,14 +3191,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen-image",
     name: "Qwen Image",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0,
       output: 0,
@@ -3049,14 +3209,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen-image-max-2025-12-30",
     name: "Qwen Image Max 2025-12-30",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0,
       output: 0,
@@ -3067,14 +3227,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen-coder-plus",
     name: "Qwen Coder Plus",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.502,
       output: 1.004,
@@ -3085,14 +3245,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen3-coder-flash",
     name: "Qwen3 Coder Flash",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.3,
       output: 1.5,
@@ -3103,14 +3263,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen3-vl-plus",
     name: "Qwen3 VL Plus",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.19999999999999998,
       output: 1.5999999999999999,
@@ -3121,53 +3281,35 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-  },
-  {
-    id: "qwen3-vl-flash",
-    name: "Qwen3 VL Flash",
-    reasoning: false,
-    input: ["text", "image"],
-    cost: {
-      input: 0.049999999999999996,
-      output: 0.39999999999999997,
-      cacheRead: 0.01,
-      cacheWrite: 0,
-    },
-    contextWindow: 262144,
-    maxTokens: 16384,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen3-vl-235b-a22b-instruct",
     name: "Qwen3 VL 235B A22B Instruct",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
-      input: 0.5,
-      output: 2,
-      cacheRead: 0,
+      input: 0.19999999999999998,
+      output: 0.88,
+      cacheRead: 0.11,
       cacheWrite: 0,
     },
-    contextWindow: 131072,
+    contextWindow: 262144,
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen3-vl-235b-a22b-thinking",
     name: "Qwen3 VL 235B A22B Thinking",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
-      input: 0.5,
-      output: 2,
+      input: 0.98,
+      output: 3.95,
       cacheRead: 0,
       cacheWrite: 0,
     },
@@ -3175,7 +3317,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3189,7 +3331,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "qwen2-5-vl-32b-instruct",
     name: "Qwen2.5 VL 32B Instruct",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 1.4,
       output: 4.199999999999999,
@@ -3200,14 +3342,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen-image-edit-plus",
     name: "Qwen Image Edit Plus",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0,
       output: 0,
@@ -3218,14 +3360,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen-image-edit-max",
     name: "Qwen Image Edit Max",
     reasoning: false,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0,
       output: 0,
@@ -3236,39 +3378,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-  },
-  {
-    id: "qwen3.6-max-preview",
-    name: "Qwen3.6 Max Preview",
-    reasoning: true,
-    input: ["text"],
-    cost: {
-      input: 1.3,
-      output: 7.8,
-      cacheRead: 0.13,
-      cacheWrite: 0,
-    },
-    contextWindow: 262144,
-    maxTokens: 16384,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-    thinkingLevelMap: {
-      minimal: null,
-      low: null,
-      medium: "medium",
-      high: "high",
-      xhigh: "xhigh",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "qwen3.6-plus",
     name: "Qwen3.6 Plus",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.5,
       output: 3,
@@ -3279,7 +3396,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3293,7 +3410,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "qwen3.6-35b-a3b",
     name: "Qwen3.6 35B A3B",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.248,
       output: 1.4849999999999999,
@@ -3304,7 +3421,32 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "qwen3.6-flash",
+    name: "Qwen3.6 Flash",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 0.25,
+      output: 1.5,
+      cacheRead: 0.049999999999999996,
+      cacheWrite: 0.3125,
+    },
+    contextWindow: 1000000,
+    maxTokens: 16384,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3318,7 +3460,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "seed-1-6-250615",
     name: "Seed 1.6 (250615)",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.25,
       output: 2,
@@ -3329,7 +3471,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3343,7 +3485,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "seed-1-6-250915",
     name: "Seed 1.6 (250915)",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.25,
       output: 2,
@@ -3354,7 +3496,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3368,7 +3510,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "seed-1-6-flash-250715",
     name: "Seed 1.6 Flash (250715)",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.07,
       output: 0.3,
@@ -3379,7 +3521,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3393,7 +3535,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "seed-1-8-251228",
     name: "Seed 1.8 (251228)",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.25,
       output: 2,
@@ -3404,7 +3546,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3418,7 +3560,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "seedream-4-0",
     name: "Seedream 4.0",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0,
       output: 0,
@@ -3429,14 +3571,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "seedream-4-5",
     name: "Seedream 4.5",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0,
       output: 0,
@@ -3447,14 +3589,100 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
+    },
+  },
+  {
+    id: "seedream-5-0-lite",
+    name: "Seedream 5.0 Lite",
+    reasoning: false,
+    input: ["text"] as ("text" | "image")[],
+    cost: {
+      input: 0,
+      output: 0,
+      cacheRead: 0,
+      cacheWrite: 0,
+    },
+    contextWindow: 2000,
+    maxTokens: 32768,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+  },
+  {
+    id: "seedream-5-0-pro",
+    name: "Seedream 5.0 Pro",
+    reasoning: false,
+    input: ["text"] as ("text" | "image")[],
+    cost: {
+      input: 0,
+      output: 0,
+      cacheRead: 0,
+      cacheWrite: 0,
+    },
+    contextWindow: 2000,
+    maxTokens: 32768,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+  },
+  {
+    id: "hermes-4-405b",
+    name: "Hermes 4 405B",
+    reasoning: true,
+    input: ["text"] as ("text" | "image")[],
+    cost: {
+      input: 1,
+      output: 3,
+      cacheRead: 0,
+      cacheWrite: 0,
+    },
+    contextWindow: 131072,
+    maxTokens: 16384,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "hermes-4-70b",
+    name: "Hermes 4 70B",
+    reasoning: true,
+    input: ["text"] as ("text" | "image")[],
+    cost: {
+      input: 0.13,
+      output: 0.39999999999999997,
+      cacheRead: 0,
+      cacheWrite: 0,
+    },
+    contextWindow: 131072,
+    maxTokens: 16384,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
     },
   },
   {
     id: "fugu-ultra",
     name: "Fugu Ultra",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 5,
       output: 30,
@@ -3465,7 +3693,32 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "hy3",
+    name: "Hy3",
+    reasoning: true,
+    input: ["text"] as ("text" | "image")[],
+    cost: {
+      input: 0.14,
+      output: 0.58,
+      cacheRead: 0.035,
+      cacheWrite: 0,
+    },
+    contextWindow: 262144,
+    maxTokens: 16384,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3478,37 +3731,162 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
   {
     id: "nemotron-3-ultra-550b",
     name: "Nemotron 3 Ultra 550B",
-    reasoning: false,
-    input: ["text", "image"],
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.5,
       output: 2.5,
       cacheRead: 0.15,
       cacheWrite: 0,
     },
+    contextWindow: 1048576,
+    maxTokens: 32768,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "nemotron-3-super-120b",
+    name: "Nemotron 3 Super 120B",
+    reasoning: true,
+    input: ["text"] as ("text" | "image")[],
+    cost: {
+      input: 0.3,
+      output: 0.8999999999999999,
+      cacheRead: 0,
+      cacheWrite: 0,
+    },
     contextWindow: 262144,
     maxTokens: 32768,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "nemotron-3-nano-30b",
+    name: "Nemotron 3 Nano 30B",
+    reasoning: true,
+    input: ["text"] as ("text" | "image")[],
+    cost: {
+      input: 0.06,
+      output: 0.24,
+      cacheRead: 0,
+      cacheWrite: 0,
+    },
+    contextWindow: 262144,
+    maxTokens: 32768,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "nemotron-3-nano-omni",
+    name: "Nemotron 3 Nano Omni",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 0.06,
+      output: 0.24,
+      cacheRead: 0,
+      cacheWrite: 0,
+    },
+    contextWindow: 262144,
+    maxTokens: 32768,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "cosmos3-super-reasoner",
+    name: "Cosmos 3 Super Reasoner",
+    reasoning: true,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 0.09999999999999999,
+      output: 0.3,
+      cacheRead: 0,
+      cacheWrite: 0,
+    },
+    contextWindow: 262144,
+    maxTokens: 32768,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
+    },
+    thinkingLevelMap: {
+      minimal: null,
+      low: null,
+      medium: "medium",
+      high: "high",
+      xhigh: "xhigh",
+    },
+  },
+  {
+    id: "minicpm-v-4.5",
+    name: "MiniCPM-V 4.5",
+    reasoning: false,
+    input: ["text", "image"] as ("text" | "image")[],
+    cost: {
+      input: 0.658,
+      output: 1.1099999999999999,
+      cacheRead: 0,
+      cacheWrite: 0,
+    },
+    contextWindow: 32000,
+    maxTokens: 16384,
+    compat: {
+      supportsDeveloperRole: false,
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "glm-5.2",
     name: "GLM-5.2",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 1.4,
-      output: 4.4,
-      cacheRead: 0.26,
+      input: 0.55,
+      output: 1.9255,
+      cacheRead: 0.1375,
       cacheWrite: 0,
     },
-    contextWindow: 1000000,
-    maxTokens: 32768,
+    contextWindow: 1048576,
+    maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3522,18 +3900,18 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "glm-5.1",
     name: "GLM-5.1",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 1.4,
-      output: 4.4,
-      cacheRead: 0.26,
+      input: 0.9309999999999999,
+      output: 2.9299999999999997,
+      cacheRead: 0.173,
       cacheWrite: 0,
     },
     contextWindow: 204800,
-    maxTokens: 32768,
+    maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3547,18 +3925,18 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "glm-5",
     name: "GLM-5",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 1,
-      output: 3.1999999999999997,
-      cacheRead: 0.19999999999999998,
+      input: 0.72,
+      output: 2.3,
+      cacheRead: 0.144,
       cacheWrite: 0,
     },
     contextWindow: 203000,
-    maxTokens: 32768,
+    maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3572,7 +3950,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "glm-4.5",
     name: "GLM-4.5",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.6,
       output: 2.2,
@@ -3580,10 +3958,10 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
       cacheWrite: 0,
     },
     contextWindow: 131000,
-    maxTokens: 32768,
+    maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3597,7 +3975,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "glm-4.5v",
     name: "GLM-4.5V",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.6,
       output: 1.7999999999999998,
@@ -3605,10 +3983,10 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
       cacheWrite: 0,
     },
     contextWindow: 128000,
-    maxTokens: 32768,
+    maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3622,25 +4000,25 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "glm-4.5-air",
     name: "GLM-4.5 Air",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 0.19999999999999998,
-      output: 1.1,
-      cacheRead: 0.03,
+      input: 0.13,
+      output: 0.85,
+      cacheRead: 0.024999999999999998,
       cacheWrite: 0,
     },
     contextWindow: 131000,
-    maxTokens: 32768,
+    maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "glm-4.5-x",
     name: "GLM-4.5 X",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 2.2,
       output: 8.9,
@@ -3648,10 +4026,10 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
       cacheWrite: 0,
     },
     contextWindow: 128000,
-    maxTokens: 32768,
+    maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3665,7 +4043,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "glm-4.5-airx",
     name: "GLM-4.5 AirX",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 1.1,
       output: 4.5,
@@ -3673,46 +4051,28 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
       cacheWrite: 0,
     },
     contextWindow: 128000,
-    maxTokens: 32768,
+    maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-  },
-  {
-    id: "glm-4.5-flash",
-    name: "GLM-4.5 Flash",
-    reasoning: false,
-    input: ["text"],
-    cost: {
-      input: 0,
-      output: 0,
-      cacheRead: 0,
-      cacheWrite: 0,
-    },
-    contextWindow: 128000,
-    maxTokens: 32768,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "glm-4.7",
     name: "GLM-4.7",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 0.6,
-      output: 2.2,
-      cacheRead: 0.11,
+      input: 0.38,
+      output: 1.9800000000000002,
+      cacheRead: 0.19,
       cacheWrite: 0,
     },
     contextWindow: 204800,
-    maxTokens: 32768,
+    maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3726,7 +4086,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "glm-4.7-flashx",
     name: "GLM-4.7 FlashX",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.07,
       output: 0.39999999999999997,
@@ -3734,35 +4094,10 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
       cacheWrite: 0,
     },
     contextWindow: 200000,
-    maxTokens: 32768,
+    maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-    thinkingLevelMap: {
-      minimal: null,
-      low: null,
-      medium: "medium",
-      high: "high",
-      xhigh: "xhigh",
-    },
-  },
-  {
-    id: "glm-4.7-flash-free",
-    name: "GLM-4.7 Flash (Free)",
-    reasoning: true,
-    input: ["text"],
-    cost: {
-      input: 0,
-      output: 0,
-      cacheRead: 0,
-      cacheWrite: 0,
-    },
-    contextWindow: 200000,
-    maxTokens: 32768,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3776,7 +4111,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "glm-4.7-flash",
     name: "GLM-4.7 Flash",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.06,
       output: 0.39999999999999997,
@@ -3784,28 +4119,28 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
       cacheWrite: 0,
     },
     contextWindow: 200000,
-    maxTokens: 32768,
+    maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "glm-4.6",
     name: "GLM-4.6",
     reasoning: true,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
-      input: 0.6,
+      input: 0.55,
       output: 2.2,
       cacheRead: 0.11,
       cacheWrite: 0,
     },
     contextWindow: 204800,
-    maxTokens: 32768,
+    maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3819,7 +4154,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "glm-4-32b-0414-128k",
     name: "GLM-4 32B (0414-128k)",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0.09999999999999999,
       output: 0.09999999999999999,
@@ -3827,17 +4162,17 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
       cacheWrite: 0,
     },
     contextWindow: 128000,
-    maxTokens: 32768,
+    maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "glm-4.6v",
     name: "GLM-4.6V",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.3,
       output: 0.8999999999999999,
@@ -3845,10 +4180,10 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
       cacheWrite: 0,
     },
     contextWindow: 131072,
-    maxTokens: 32768,
+    maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3862,7 +4197,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "glm-4.6v-flashx",
     name: "GLM-4.6V FlashX",
     reasoning: true,
-    input: ["text", "image"],
+    input: ["text", "image"] as ("text" | "image")[],
     cost: {
       input: 0.04,
       output: 0.39999999999999997,
@@ -3870,35 +4205,10 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
       cacheWrite: 0,
     },
     contextWindow: 128000,
-    maxTokens: 32768,
+    maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
-    },
-    thinkingLevelMap: {
-      minimal: null,
-      low: null,
-      medium: "medium",
-      high: "high",
-      xhigh: "xhigh",
-    },
-  },
-  {
-    id: "glm-4.6v-flash",
-    name: "GLM-4.6V Flash",
-    reasoning: true,
-    input: ["text", "image"],
-    cost: {
-      input: 0,
-      output: 0,
-      cacheRead: 0,
-      cacheWrite: 0,
-    },
-    contextWindow: 128000,
-    maxTokens: 32768,
-    compat: {
-      supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
     thinkingLevelMap: {
       minimal: null,
@@ -3912,7 +4222,7 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     id: "cogview-4",
     name: "CogView-4",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0,
       output: 0,
@@ -3923,14 +4233,14 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
     maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
   {
     id: "glm-image",
     name: "GLM-Image",
     reasoning: false,
-    input: ["text"],
+    input: ["text"] as ("text" | "image")[],
     cost: {
       input: 0,
       output: 0,
@@ -3938,10 +4248,10 @@ export const LLMGATEWAY_STATIC_MODELS: ProviderModelConfig[] = [
       cacheWrite: 0,
     },
     contextWindow: 2000,
-    maxTokens: 32768,
+    maxTokens: 16384,
     compat: {
       supportsDeveloperRole: false,
-      maxTokensField: "max_tokens",
+      maxTokensField: "max_tokens" as const,
     },
   },
 ];
