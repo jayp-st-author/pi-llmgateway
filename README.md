@@ -2,6 +2,9 @@
 
 A Pi extension that adds [LLM Gateway](https://llmgateway.io) as a model provider, giving you access to 160+ chat models from OpenAI, Anthropic, Google, xAI, Mistral, DeepSeek, and many others through a single OpenAI-compatible API.
 
+> [!NOTE]
+> This is a fork of [mcowger/pi-llmgateway](https://github.com/mcowger/pi-llmgateway). It tracks the `@earendil-works` Pi packages and currently carries the compatibility updates for Pi 0.84.1. Install this repository from GitHub to use the fork-specific changes; the npm package remains the upstream release.
+
 ## Installation
 
 ### Get API Key
@@ -24,17 +27,20 @@ Or set an environment variable:
 export LLMGATEWAY_API_KEY="your-api-key-here"
 ```
 
-### Install Extension
+### Install This Fork
 
 ```bash
-# From npm
-pi install npm:@mcowger/pi-llmgateway
-
 # From git
-pi install git:github.com/mcowger/pi-llmgateway
+pi install git:github.com/jayp-st-author/pi-llmgateway
 
 # Local development
 pi -e ./src/extensions/provider/index.ts
+```
+
+To use the upstream npm release instead:
+
+```bash
+pi install npm:@mcowger/pi-llmgateway
 ```
 
 ## Usage
@@ -94,7 +100,7 @@ Models are seeded from a hardcoded snapshot (`src/extensions/provider/models/sta
 ## Development
 
 ```bash
-git clone https://github.com/mcowger/pi-llmgateway.git
+git clone https://github.com/jayp-st-author/pi-llmgateway.git
 cd pi-llmgateway
 bun install
 ```
@@ -111,7 +117,7 @@ bun run gen:schema  # Regenerate schema.json from config.ts
 
 ## Requirements
 
-- Pi coding agent v0.67.68+
+- `@earendil-works/pi-coding-agent` 0.84.x (tested with 0.84.1)
 - LLM Gateway API key (configured in `~/.pi/agent/auth.json` or via `LLMGATEWAY_API_KEY`)
 
 ## Links
@@ -120,3 +126,4 @@ bun run gen:schema  # Regenerate schema.json from config.ts
 - [LLM Gateway Docs](https://docs.llmgateway.io)
 - [LLM Gateway GitHub](https://github.com/theopenco/llmgateway)
 - [Pi Documentation](https://buildwithpi.ai/)
+- [Upstream pi-llmgateway](https://github.com/mcowger/pi-llmgateway)
