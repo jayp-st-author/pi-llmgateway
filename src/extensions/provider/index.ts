@@ -1,4 +1,4 @@
-import { streamSimpleOpenAICompletions } from "@earendil-works/pi-ai/openai-completions";
+import { openAICompletionsApi } from "@earendil-works/pi-ai/compat";
 import type {
   ExtensionAPI,
   ProviderModelConfig,
@@ -27,7 +27,13 @@ function registerProvider(
 ): void {
   const { baseUrl, routing, webSearch } = configLoader.getConfig();
 
-  const baseStreamSimple = streamSimpleOpenAICompletions as AnyStreamSimple;
+  // Use the lazy API factory from compat (which the extension loader
+  // supports) instead of importing directly from
+  // @earendil-works/pi-ai/api/openai-completions, which the loader's alias
+  // system cannot resolve. The lazy streamSimple delegates to the real
+  // openai-completions module on first call.
+  const baseStreamSimple = openAICompletionsApi()
+    .streamSimple as AnyStreamSimple;
 
   const config: Parameters<ExtensionAPI["registerProvider"]>[1] = {
     baseUrl,
@@ -109,7 +115,7 @@ export default async function (pi: ExtensionAPI) {
     fetchAbort = controller;
 
     try {
-      const apiKey = await getLLMGatewayApiKey(ctx.modelRegistry.authStorage);
+      const apiKey = await getLLMGatewayApiKey(ctx.modelRegistry);
       const result = await fetchModels({
         baseUrl,
         apiKey,
