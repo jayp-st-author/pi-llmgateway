@@ -2,6 +2,9 @@
 
 A Pi extension that adds [LLM Gateway](https://llmgateway.io) as a model provider, giving you access to 160+ chat models from OpenAI, Anthropic, Google, xAI, Mistral, DeepSeek, and many others through a single OpenAI-compatible API.
 
+> [!NOTE]
+> This fork updates the extension for LLM Gateway DevPass subscribers. It refreshes the live model catalog whenever a Pi session starts, so models added to or removed from a DevPass subscription appear automatically without reinstalling the extension. It also tracks the `@earendil-works` Pi packages and carries the compatibility updates for Pi 0.84.1. The original extension is maintained at [mcowger/pi-llmgateway](https://github.com/mcowger/pi-llmgateway).
+
 ## Installation
 
 ### Get API Key
@@ -24,17 +27,20 @@ Or set an environment variable:
 export LLMGATEWAY_API_KEY="your-api-key-here"
 ```
 
-### Install Extension
+### Install This Fork
 
 ```bash
-# From npm
-pi install npm:@mcowger/pi-llmgateway
-
 # From git
-pi install git:github.com/mcowger/pi-llmgateway
+pi install git:github.com/jayp-st-author/pi-llmgateway
 
 # Local development
 pi -e ./src/extensions/provider/index.ts
+```
+
+To use the upstream npm release instead:
+
+```bash
+pi install npm:@mcowger/pi-llmgateway
 ```
 
 ## Usage
@@ -49,6 +55,12 @@ Select `llmgateway` as your provider and choose from available models:
 ```
 
 The special `auto` model lets the gateway pick the best provider and model for each request based on the configured routing strategy.
+
+## Automatic DevPass Model Updates
+
+With a DevPass API key configured, the extension refreshes LLM Gateway's live `/v1/models` catalog on every `session_start`. New DevPass models become available in Pi on the next session, and models removed from the subscription disappear from the list automatically.
+
+The most recently fetched catalog is cached locally and used immediately at startup. If the live refresh fails, the extension keeps the cached catalog—or its bundled static snapshot—so a temporary network or gateway failure does not empty the model picker.
 
 ## Settings
 
@@ -94,7 +106,7 @@ Models are seeded from a hardcoded snapshot (`src/extensions/provider/models/sta
 ## Development
 
 ```bash
-git clone https://github.com/mcowger/pi-llmgateway.git
+git clone https://github.com/jayp-st-author/pi-llmgateway.git
 cd pi-llmgateway
 bun install
 ```
@@ -111,7 +123,7 @@ bun run gen:schema  # Regenerate schema.json from config.ts
 
 ## Requirements
 
-- Pi coding agent v0.67.68+
+- `@earendil-works/pi-coding-agent` 0.84.x (tested with 0.84.1)
 - LLM Gateway API key (configured in `~/.pi/agent/auth.json` or via `LLMGATEWAY_API_KEY`)
 
 ## Links
@@ -120,3 +132,4 @@ bun run gen:schema  # Regenerate schema.json from config.ts
 - [LLM Gateway Docs](https://docs.llmgateway.io)
 - [LLM Gateway GitHub](https://github.com/theopenco/llmgateway)
 - [Pi Documentation](https://buildwithpi.ai/)
+- [Upstream pi-llmgateway](https://github.com/mcowger/pi-llmgateway)

@@ -1,4 +1,4 @@
-import type { AuthStorage } from "@earendil-works/pi-coding-agent";
+import type { ModelRegistry } from "@earendil-works/pi-coding-agent";
 
 const PROVIDER_ID = "llmgateway";
 
@@ -11,8 +11,8 @@ const PROVIDER_ID = "llmgateway";
  * 3. Environment variable LLMGATEWAY_API_KEY
  */
 export async function getLLMGatewayApiKey(
-  authStorage: AuthStorage,
+  modelRegistry: ModelRegistry,
 ): Promise<string | undefined> {
-  const key = await authStorage.getApiKey(PROVIDER_ID);
+  const key = await modelRegistry.getApiKeyForProvider(PROVIDER_ID);
   return key ?? process.env.LLMGATEWAY_API_KEY;
 }
