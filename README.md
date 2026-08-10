@@ -3,7 +3,7 @@
 A Pi extension that adds [LLM Gateway](https://llmgateway.io) as a model provider, giving you access to 160+ chat models from OpenAI, Anthropic, Google, xAI, Mistral, DeepSeek, and many others through a single OpenAI-compatible API.
 
 > [!NOTE]
-> This is a fork of [mcowger/pi-llmgateway](https://github.com/mcowger/pi-llmgateway). It tracks the `@earendil-works` Pi packages and currently carries the compatibility updates for Pi 0.84.1. Install this repository from GitHub to use the fork-specific changes; the npm package remains the upstream release.
+> This fork updates the extension for LLM Gateway DevPass subscribers. It refreshes the live model catalog whenever a Pi session starts, so models added to or removed from a DevPass subscription appear automatically without reinstalling the extension. It also tracks the `@earendil-works` Pi packages and carries the compatibility updates for Pi 0.84.1. The original extension is maintained at [mcowger/pi-llmgateway](https://github.com/mcowger/pi-llmgateway).
 
 ## Installation
 
@@ -55,6 +55,12 @@ Select `llmgateway` as your provider and choose from available models:
 ```
 
 The special `auto` model lets the gateway pick the best provider and model for each request based on the configured routing strategy.
+
+## Automatic DevPass Model Updates
+
+With a DevPass API key configured, the extension refreshes LLM Gateway's live `/v1/models` catalog on every `session_start`. New DevPass models become available in Pi on the next session, and models removed from the subscription disappear from the list automatically.
+
+The most recently fetched catalog is cached locally and used immediately at startup. If the live refresh fails, the extension keeps the cached catalog—or its bundled static snapshot—so a temporary network or gateway failure does not empty the model picker.
 
 ## Settings
 
